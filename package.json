@@ -1,6 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
   "description": "project #1 from hexlet.io frontend program",
   "main": "index.js",
   "scripts": {
@@ -9,6 +10,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/movmovbaby/frontend-project-lvl1.git"
+  },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
   },
   "author": "",
   "license": "ISC",
