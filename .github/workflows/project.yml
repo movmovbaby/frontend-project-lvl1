@@ -3,7 +3,8 @@ name: project-check
 on: push
 jobs:
   lint:
+    name: Lint project
     runs-on: ubuntu-latest
-      steps:
-        - name: lint
-          run: make lint
+    steps:
+      - name: Start linter
+        run: make lint
