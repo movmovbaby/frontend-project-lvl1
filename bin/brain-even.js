@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import playIsEven from '../src/isEven.js';
+import playIsEven from '../src/games/even.js';
 import { greetings, getPlayerName, sayHello } from '../src/cli.js';
 
 greetings();
