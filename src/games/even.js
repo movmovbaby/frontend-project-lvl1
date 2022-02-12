@@ -1,23 +1,33 @@
-import readlineSync from 'readline-sync';
+import { gameLoop, displayString } from "../index.js";
 
-const greetingString = 'Answer "yes" if the number is even, otherwise answer "no".';
-const correctMessage = 'Correct!';
-let gamesCounter = 3;
-
-const displayString = (str) => {
-  console.log(str);
-};
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+let numberOfGames = 3;
 
 const generateNumber = () => Math.floor(Math.random() * 100);
 
 const isEven = (number) => {
   if (number % 2 === 0) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
-const playIsEven = (name) => {
+const even = (number) => {
+  if (isEven(number)) {
+    return 'yes';
+  } else {
+    return 'no';
+  }
+};
+
+const playEven = (playerName) => {
+  displayString(task);
+  gameLoop(generateNumber, even, numberOfGames, playerName);
+};
+
+export default playEven;
+
+/* const playIsEven = (name) => {
   let number;
   let answer;
   let userAnswer;
@@ -45,6 +55,4 @@ const playIsEven = (name) => {
       displayString(returnString);
     }
   }
-};
-
-export default playIsEven;
+}; */
