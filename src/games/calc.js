@@ -1,9 +1,6 @@
-import { gameLoop, displayString } from "../index.js";
-
-
+import { gameLoop, displayString } from '../index.js';
 
 const task = 'What is the result of the expression?';
-let numberOfGames = 3;
 
 const generateExpression = () => {
   const operations = ['+', '-', '*'];
@@ -36,12 +33,7 @@ const evaluateExpression = (expr) => {
 
 const playCalc = (playerName) => {
   displayString(task);
-  gameLoop(generateExpression, evaluateExpression, numberOfGames, playerName);
+  gameLoop(generateExpression, evaluateExpression, playerName);
 };
-
-
-
-
-
 
 export default playCalc;
