@@ -1,4 +1,4 @@
-import { gameLoop, displayString, getPlayerName } from '../index.js';
+import { gameLoop, displayString } from '../index.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
@@ -11,7 +11,7 @@ const generateNumbers = () => {
 const gcd = (a, b) => {
   while (a !== 0 && b !== 0) {
     if (a > b) {
-      a = a % b;
+      a %= b;
     } else {
       b = b % a;
     }
@@ -24,11 +24,11 @@ const gcdWrapper = (str) => {
   const [a, b] = str.split(' ');
   const result = gcd(Number(a), Number(b));
   return String(result);
-}
+};
 
 const playGcd = (playerName) => {
   displayString(task);
   gameLoop(generateNumbers, gcdWrapper, playerName);
-}
+};
 
 export default playGcd;
