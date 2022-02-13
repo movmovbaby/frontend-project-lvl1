@@ -39,7 +39,7 @@ const gameLoop = (problemGenerator, problemSolver, playerName, rounds = numberOf
     }
   }
 
-  returnString = `Congratulations, ${playerName}`;
+  returnString = `Congratulations, ${playerName}!`;
   displayString(returnString);
 };
 
