@@ -1,10 +1,11 @@
 import { gameLoop, displayString } from '../index.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
+const maxNumber = 100;
 
 const generateNumbers = () => {
-  const a = Math.floor(Math.random() * 100);
-  const b = Math.floor(Math.random() * 100);
+  const a = Math.floor(Math.random() * maxNumber);
+  const b = Math.floor(Math.random() * maxNumber);
   return `${a} ${b}`;
 };
 

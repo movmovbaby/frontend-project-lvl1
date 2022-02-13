@@ -1,11 +1,12 @@
 import { gameLoop, displayString } from '../index.js';
 
 const task = 'What is the result of the expression?';
+const maxNumber = 100;
 
 const generateExpression = () => {
   const operations = ['+', '-', '*'];
-  const a = Math.floor(Math.random() * 100);
-  const b = Math.floor(Math.random() * 100);
+  const a = Math.floor(Math.random() * maxNumber);
+  const b = Math.floor(Math.random() * maxNumber);
   const op = operations[Math.floor(Math.random() * operations.length)];
 
   return `${a} ${op} ${b}`;
