@@ -4,4 +4,6 @@
 ![example workflow](https://github.com/movmovbaby/frontend-project-lvl1/actions/workflows/project.yml/badge.svg)
 
 ### asciinema
-https://asciinema.org/a/jDeDqxXN84Wl9Sts3tUxAQ8cZ
+https://asciinema.org/a/jDeDqxXN84Wl9Sts3tUxAQ8cZ brain-even
+https://asciinema.org/connect/049cfb43-ece8-4eb5-9ef8-540573b66cd7 brain-calc
+https://asciinema.org/a/tmgQvOilR5PrM9ooI08kmQdfJ brain-gcd
