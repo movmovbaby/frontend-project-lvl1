@@ -4,7 +4,6 @@ const task = 'What number is missing in the progression?';
 const maxStartNumber = 10;
 const maxStep = 6;
 
-
 const generateProgression = () => {
   const start = Math.floor(Math.random() * maxStartNumber);
   const step = Math.floor(Math.random() * maxStep);
