@@ -9,15 +9,17 @@ const generateNumbers = () => {
 };
 
 const gcd = (a, b) => {
-  while (a !== 0 && b !== 0) {
-    if (a > b) {
-      a %= b;
+  let la = a;
+  let lb = b;
+  while (la !== 0 && lb !== 0) {
+    if (la > lb) {
+      la %= lb;
     } else {
-      b = b % a;
+      lb %= la;
     }
   }
 
-  return a + b;
+  return la + lb;
 };
 
 const gcdWrapper = (str) => {
