@@ -22,7 +22,6 @@ const gameLoop = (problemGenerator, problemSolver, playerName, rounds = numberOf
       displayString(correctMessage);
       currentRound += 1;
     } else {
-      currentRound = 3;
       returnString = `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${playerName}!`;
       displayString(returnString);
       return;
