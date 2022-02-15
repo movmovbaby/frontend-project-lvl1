@@ -3,7 +3,6 @@ import generateNumber from '../utils.js';
 import greetings from '../cli.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
-const maxNumber = 100;
 
 const generateNumbers = () => {
   const a = generateNumber();
@@ -12,17 +11,17 @@ const generateNumbers = () => {
 };
 
 const gcd = (a, b) => {
-  let local_a = a;
-  let local_b = b;
-  while (local_a !== 0 && local_b !== 0) {
-    if (local_a > local_b) {
-      local_a %= local_b;
+  let localA = a;
+  let localB = b;
+  while (localA !== 0 && localB !== 0) {
+    if (localA > localB) {
+      localA %= localB;
     } else {
-      local_b %= local_a;
+      localB %= localA;
     }
   }
 
-  return local_a + local_b;
+  return localA + localB;
 };
 
 const gcdWrapper = (str) => {
