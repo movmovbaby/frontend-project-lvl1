@@ -5,6 +5,9 @@
 
 ### Description
 Simple console math games!
+To launch games, type in terminal: `make brain-<game name>`, where game-name: calc, even, gcd, prime and progression.
+
+You must give the correct answer to three questions in a row.
 
 
 ### asciinema
