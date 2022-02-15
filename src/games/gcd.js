@@ -1,26 +1,28 @@
 import { gameLoop, displayString } from '../index.js';
+import generateNumber from '../utils.js';
+import greetings from '../cli.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
 const maxNumber = 100;
 
 const generateNumbers = () => {
-  const a = Math.floor(Math.random() * maxNumber);
-  const b = Math.floor(Math.random() * maxNumber);
+  const a = generateNumber();
+  const b = generateNumber();
   return `${a} ${b}`;
 };
 
 const gcd = (a, b) => {
-  let la = a;
-  let lb = b;
-  while (la !== 0 && lb !== 0) {
-    if (la > lb) {
-      la %= lb;
+  let local_a = a;
+  let local_b = b;
+  while (local_a !== 0 && local_b !== 0) {
+    if (local_a > local_b) {
+      local_a %= local_b;
     } else {
-      lb %= la;
+      local_b %= local_a;
     }
   }
 
-  return la + lb;
+  return local_a + local_b;
 };
 
 const gcdWrapper = (str) => {
@@ -29,7 +31,8 @@ const gcdWrapper = (str) => {
   return String(result);
 };
 
-const playGcd = (playerName) => {
+const playGcd = () => {
+  const playerName = greetings();
   displayString(task);
   gameLoop(generateNumbers, gcdWrapper, playerName);
 };

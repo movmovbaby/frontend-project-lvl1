@@ -1,4 +1,5 @@
 import { gameLoop, displayString } from '../index.js';
+import greetings from '../cli.js';
 
 const task = 'What is the result of the expression?';
 const maxNumber = 100;
@@ -32,7 +33,8 @@ const evaluateExpression = (expr) => {
   return String(result);
 };
 
-const playCalc = (playerName) => {
+const playCalc = () => {
+  const playerName = greetings();
   displayString(task);
   gameLoop(generateExpression, evaluateExpression, playerName);
 };

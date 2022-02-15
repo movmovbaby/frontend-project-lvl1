@@ -1,9 +1,8 @@
 import { gameLoop, displayString } from '../index.js';
+import generateNumber from '../utils.js';
+import greetings from '../cli.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const maxNumber = 500;
-
-const generateNumber = () => Math.floor(Math.random() * maxNumber);
 
 const isPrime = (number) => {
   for (let i = 2; i < number / 2; i += 1) {
@@ -21,7 +20,8 @@ const isPrimeWrapper = (number) => {
   return 'no';
 };
 
-const playPrime = (playerName) => {
+const playPrime = () => {
+  const playerName = greetings();
   displayString(task);
   gameLoop(generateNumber, isPrimeWrapper, playerName);
 };

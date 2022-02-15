@@ -5,16 +5,6 @@ const numberOfGames = 3;
 
 const displayString = (str) => console.log(str);
 
-const getPlayerName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  return name;
-};
-
-const sayHello = (playerName) => {
-  const greet = `Hello, ${playerName}!`;
-  console.log(greet);
-};
-
 const gameLoop = (problemGenerator, problemSolver, playerName, rounds = numberOfGames) => {
   let currentRound = 0;
   let answer = '';
@@ -45,7 +35,5 @@ const gameLoop = (problemGenerator, problemSolver, playerName, rounds = numberOf
 
 export {
   gameLoop,
-  getPlayerName,
-  sayHello,
   displayString,
 };

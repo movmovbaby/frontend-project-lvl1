@@ -1,9 +1,8 @@
 import { gameLoop, displayString } from '../index.js';
+import generateNumber from '../utils.js';
+import greetings from '../cli.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
-const maxNumber = 100;
-
-const generateNumber = () => Math.floor(Math.random() * maxNumber);
 
 const isEven = (number) => {
   if (number % 2 === 0) {
@@ -20,7 +19,8 @@ const even = (number) => {
   return 'no';
 };
 
-const playEven = (playerName) => {
+const playEven = () => {
+  const playerName = greetings();
   displayString(task);
   gameLoop(generateNumber, even, playerName);
 };
