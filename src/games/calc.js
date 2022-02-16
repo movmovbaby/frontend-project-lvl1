@@ -1,30 +1,30 @@
 import gameLoop from '../index.js';
+import generateRandomInt from '../utils.js';
 import greetings from '../cli.js';
 
 const task = 'What is the result of the expression?';
-const maxNumber = 100;
 
 const generateExpression = () => {
   const operations = ['+', '-', '*'];
-  const a = Math.floor(Math.random() * maxNumber);
-  const b = Math.floor(Math.random() * maxNumber);
-  const op = operations[Math.floor(Math.random() * operations.length)];
+  const leftOperand = generateRandomInt();
+  const rightOperand = generateRandomInt();
+  const operation = operations[generateRandomInt(0, operations.length)];
 
-  return `${a} ${op} ${b}`;
+  return `${leftOperand} ${operation} ${rightOperand}`;
 };
 
 const evaluateExpression = (expr) => {
   let result = 0;
-  const [a, op, b] = expr.split(' ');
+  const [leftOperand, operation, rightOperand] = expr.split(' ');
   switch (op) {
     case '+':
-      result = Number(a) + Number(b);
+      result = Number(leftOperand) + Number(rightOperand);
       break;
     case '-':
-      result = Number(a) - Number(b);
+      result = Number(leftOperand) - Number(rightOperand);
       break;
     case '*':
-      result = Number(a) * Number(b);
+      result = Number(leftOperand) * Number(rightOperand);
       break;
     default:
       console.log('Unknown operation');

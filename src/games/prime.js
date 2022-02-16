@@ -1,5 +1,5 @@
 import gameLoop from '../index.js';
-import generateNumber from '../utils.js';
+import generateRandomInt from '../utils.js';
 import greetings from '../cli.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -23,7 +23,7 @@ const isPrimeWrapper = (number) => {
 const playPrime = () => {
   const playerName = greetings();
   console.log(task);
-  gameLoop(generateNumber, isPrimeWrapper, playerName);
+  gameLoop(generateRandomInt, isPrimeWrapper, playerName);
 };
 
 export default playPrime;

@@ -1,12 +1,12 @@
 import gameLoop from '../index.js';
-import generateNumber from '../utils.js';
+import generateRandomInt from '../utils.js';
 import greetings from '../cli.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
 const generateNumbers = () => {
-  const a = generateNumber();
-  const b = generateNumber();
+  const a = generateRandomInt();
+  const b = generateRandomInt();
   return `${a} ${b}`;
 };
 

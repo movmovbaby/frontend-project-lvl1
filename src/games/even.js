@@ -1,5 +1,5 @@
 import gameLoop from '../index.js';
-import generateNumber from '../utils.js';
+import generateRandomInt from '../utils.js';
 import greetings from '../cli.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -22,7 +22,7 @@ const even = (number) => {
 const playEven = () => {
   const playerName = greetings();
   console.log(task);
-  gameLoop(generateNumber, even, playerName);
+  gameLoop(generateRandomInt, even, playerName);
 };
 
 export default playEven;
