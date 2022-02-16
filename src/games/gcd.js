@@ -2,7 +2,7 @@ import gameLoop from '../index.js';
 import generateRandomInt from '../utils.js';
 import greetings from '../cli.js';
 
-const task = 'Find the greatest common divisor of given numbers.';
+const TASK = 'Find the greatest common divisor of given numbers.';
 
 const generateNumbers = () => {
   const a = generateRandomInt();
@@ -32,7 +32,7 @@ const gcdWrapper = (str) => {
 
 const playGcd = () => {
   const playerName = greetings();
-  console.log(task);
+  console.log(TASK);
   gameLoop(generateNumbers, gcdWrapper, playerName);
 };
 

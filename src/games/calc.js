@@ -2,7 +2,7 @@ import gameLoop from '../index.js';
 import generateRandomInt from '../utils.js';
 import greetings from '../cli.js';
 
-const task = 'What is the result of the expression?';
+const TASK = 'What is the result of the expression?';
 
 const generateExpression = () => {
   const operations = ['+', '-', '*'];
@@ -35,7 +35,7 @@ const evaluateExpression = (expr) => {
 
 const playCalc = () => {
   const playerName = greetings();
-  console.log(task);
+  console.log(TASK);
   gameLoop(generateExpression, evaluateExpression, playerName);
 };
 

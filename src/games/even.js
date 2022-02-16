@@ -2,7 +2,7 @@ import gameLoop from '../index.js';
 import generateRandomInt from '../utils.js';
 import greetings from '../cli.js';
 
-const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+const TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (number) => {
   if (number % 2 === 0) {
@@ -21,7 +21,7 @@ const even = (number) => {
 
 const playEven = () => {
   const playerName = greetings();
-  console.log(task);
+  console.log(TASK);
   gameLoop(generateRandomInt, even, playerName);
 };
 

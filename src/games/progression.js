@@ -1,19 +1,17 @@
 import greetings from '../cli.js';
+import generateRandomInt from '../utils.js';
 import gameLoop from '../index.js';
 
-const task = 'What number is missing in the progression?';
-const maxStartNumber = 10;
-const maxStep = 6;
-const range = 10;
-const startMissIndex = 2;
+const TASK = 'What number is missing in the progression?';
+const RANGE = 10;
 
 const generateProgression = () => {
-  const start = Math.floor(Math.random() * maxStartNumber);
-  const step = Math.floor(Math.random() * maxStep);
-  const missingIndex = Math.floor(Math.random() * range - startMissIndex + 1) + startMissIndex;
+  const start = generateRandomInt(0, 10);
+  const step = generateRandomInt(2, 10);
+  const missingIndex = generateRandomInt(2, RANGE);
   const progression = [];
 
-  for (let i = 0; i < range; i += 1) {
+  for (let i = 0; i < RANGE; i += 1) {
     progression[i] = start + step * i;
   }
 
@@ -38,7 +36,7 @@ const findMissingItemWrapper = (progression) => {
 
 const playProgression = () => {
   const playerName = greetings();
-  console.log(task);
+  console.log(TASK);
   gameLoop(generateProgression, findMissingItemWrapper, playerName);
 };
 
