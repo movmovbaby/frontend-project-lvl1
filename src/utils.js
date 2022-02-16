@@ -1,3 +1,6 @@
 const maxNumber = 100;
-const generateNumber = () => Math.floor(Math.random() * maxNumber);
-export default generateNumber;
+const generateRandomInt = (min = 1, max = 100) => {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+
+export default generateRandomInt;
