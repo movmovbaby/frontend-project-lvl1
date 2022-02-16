@@ -16,7 +16,7 @@ const generateExpression = () => {
 const evaluateExpression = (expr) => {
   let result = 0;
   const [leftOperand, operation, rightOperand] = expr.split(' ');
-  switch (op) {
+  switch (operation) {
     case '+':
       result = Number(leftOperand) + Number(rightOperand);
       break;
