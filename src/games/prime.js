@@ -13,7 +13,7 @@ const isPrime = (number) => {
   return true;
 };
 
-const isPrimeWrapper = (number) => {
+const isPrimeToString = (number) => {
   if (isPrime(number)) {
     return 'yes';
   }
@@ -23,7 +23,7 @@ const isPrimeWrapper = (number) => {
 const playPrime = () => {
   const playerName = greetings();
   console.log(TASK);
-  gameLoop(generateRandomInt, isPrimeWrapper, playerName);
+  gameLoop(generateRandomInt, isPrimeToString, playerName);
 };
 
 export default playPrime;

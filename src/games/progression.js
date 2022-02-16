@@ -29,7 +29,7 @@ const findMissingItem = (progression) => {
   return answer;
 };
 
-const findMissingItemWrapper = (progression) => {
+const findMissingItemToString = (progression) => {
   const number = findMissingItem(progression);
   return String(number);
 };
@@ -37,7 +37,7 @@ const findMissingItemWrapper = (progression) => {
 const playProgression = () => {
   const playerName = greetings();
   console.log(TASK);
-  gameLoop(generateProgression, findMissingItemWrapper, playerName);
+  gameLoop(generateProgression, findMissingItemToString, playerName);
 };
 
 export default playProgression;

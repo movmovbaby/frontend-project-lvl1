@@ -10,7 +10,7 @@ const generateNumbers = () => {
   return `${a} ${b}`;
 };
 
-const gcd = (a, b) => {
+const computeGcd = (a, b) => {
   let localA = a;
   let localB = b;
   while (localA !== 0 && localB !== 0) {
@@ -24,16 +24,16 @@ const gcd = (a, b) => {
   return localA + localB;
 };
 
-const gcdWrapper = (str) => {
+const computegcdToString = (str) => {
   const [a, b] = str.split(' ');
-  const result = gcd(Number(a), Number(b));
+  const result = computeGcd(Number(a), Number(b));
   return String(result);
 };
 
 const playGcd = () => {
   const playerName = greetings();
   console.log(TASK);
-  gameLoop(generateNumbers, gcdWrapper, playerName);
+  gameLoop(generateNumbers, computegcdToString, playerName);
 };
 
 export default playGcd;

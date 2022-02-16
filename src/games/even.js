@@ -11,7 +11,7 @@ const isEven = (number) => {
   return false;
 };
 
-const even = (number) => {
+const isEvenToString = (number) => {
   if (isEven(number)) {
     return 'yes';
   }
@@ -22,7 +22,7 @@ const even = (number) => {
 const playEven = () => {
   const playerName = greetings();
   console.log(TASK);
-  gameLoop(generateRandomInt, even, playerName);
+  gameLoop(generateRandomInt, isEvenToString, playerName);
 };
 
 export default playEven;
