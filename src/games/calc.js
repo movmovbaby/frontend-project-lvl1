@@ -1,4 +1,4 @@
-import { gameLoop, displayString } from '../index.js';
+import gameLoop from '../index.js';
 import greetings from '../cli.js';
 
 const task = 'What is the result of the expression?';
@@ -35,7 +35,7 @@ const evaluateExpression = (expr) => {
 
 const playCalc = () => {
   const playerName = greetings();
-  displayString(task);
+  console.log(task);
   gameLoop(generateExpression, evaluateExpression, playerName);
 };
 

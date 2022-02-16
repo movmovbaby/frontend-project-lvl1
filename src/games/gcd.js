@@ -1,4 +1,4 @@
-import { gameLoop, displayString } from '../index.js';
+import gameLoop from '../index.js';
 import generateNumber from '../utils.js';
 import greetings from '../cli.js';
 
@@ -32,7 +32,7 @@ const gcdWrapper = (str) => {
 
 const playGcd = () => {
   const playerName = greetings();
-  displayString(task);
+  console.log(task);
   gameLoop(generateNumbers, gcdWrapper, playerName);
 };
 

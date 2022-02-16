@@ -1,5 +1,5 @@
 import greetings from '../cli.js';
-import { gameLoop, displayString } from '../index.js';
+import gameLoop from '../index.js';
 
 const task = 'What number is missing in the progression?';
 const maxStartNumber = 10;
@@ -38,7 +38,7 @@ const findMissingItemWrapper = (progression) => {
 
 const playProgression = () => {
   const playerName = greetings();
-  displayString(task);
+  console.log(task);
   gameLoop(generateProgression, findMissingItemWrapper, playerName);
 };
 

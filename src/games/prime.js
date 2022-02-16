@@ -1,4 +1,4 @@
-import { gameLoop, displayString } from '../index.js';
+import gameLoop from '../index.js';
 import generateNumber from '../utils.js';
 import greetings from '../cli.js';
 
@@ -22,7 +22,7 @@ const isPrimeWrapper = (number) => {
 
 const playPrime = () => {
   const playerName = greetings();
-  displayString(task);
+  console.log(task);
   gameLoop(generateNumber, isPrimeWrapper, playerName);
 };
 
