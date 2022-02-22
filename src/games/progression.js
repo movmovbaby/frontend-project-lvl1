@@ -1,21 +1,14 @@
-import greetings from '../cli.js';
-import generateRandomInt from '../utils.js';
+import { generateRandomInt, getGameData } from '../utils.js';
 import gameLoop from '../index.js';
 
 const TASK = 'What number is missing in the progression?';
 const RANGE = 10;
 
-const generateProgression = () => {
-  const start = generateRandomInt(0, 10);
-  const step = generateRandomInt(2, 10);
-  const missingIndex = generateRandomInt(2, RANGE);
+const generateProgression = (start, step, range) => {
   const progression = [];
-
-  for (let i = 0; i < RANGE; i += 1) {
+  for (let i = 0; i < range; i += 1) {
     progression[i] = start + step * i;
   }
-
-  progression[missingIndex] = '..';
 
   return progression.join(' ');
 };
@@ -34,10 +27,20 @@ const findMissingItemToString = (progression) => {
   return String(number);
 };
 
+const gameProgression = () => {
+  const start = generateRandomInt(0, 10);
+  const step = generateRandomInt(2, 10);
+  const missingIndex = generateRandomInt(2, RANGE);
+  const progression = generateProgression(start, step, RANGE);
+
+  const progressionArray = progression.split(' ');
+  progressionArray[missingIndex] = '..';
+  return progressionArray.join(' ');
+};
+
 const playProgression = () => {
-  const playerName = greetings();
-  console.log(TASK);
-  gameLoop(generateProgression, findMissingItemToString, playerName);
+  const gameData = getGameData(gameProgression, findMissingItemToString);
+  gameLoop(gameData, TASK);
 };
 
 export default playProgression;

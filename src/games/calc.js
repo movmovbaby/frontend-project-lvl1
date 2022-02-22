@@ -1,6 +1,5 @@
+import { generateRandomInt, getGameData } from '../utils.js';
 import gameLoop from '../index.js';
-import generateRandomInt from '../utils.js';
-import greetings from '../cli.js';
 
 const TASK = 'What is the result of the expression?';
 
@@ -34,9 +33,8 @@ const evaluateExpression = (expr) => {
 };
 
 const playCalc = () => {
-  const playerName = greetings();
-  console.log(TASK);
-  gameLoop(generateExpression, evaluateExpression, playerName);
+  const gameData = getGameData(generateExpression, evaluateExpression);
+  gameLoop(gameData, TASK);
 };
 
 export default playCalc;

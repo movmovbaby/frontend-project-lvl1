@@ -1,6 +1,5 @@
+import { generateRandomInt, getGameData } from '../utils.js';
 import gameLoop from '../index.js';
-import generateRandomInt from '../utils.js';
-import greetings from '../cli.js';
 
 const TASK = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -20,9 +19,8 @@ const isEvenToString = (number) => {
 };
 
 const playEven = () => {
-  const playerName = greetings();
-  console.log(TASK);
-  gameLoop(generateRandomInt, isEvenToString, playerName);
+  const gameData = getGameData(generateRandomInt, isEvenToString);
+  gameLoop(gameData, TASK);
 };
 
 export default playEven;

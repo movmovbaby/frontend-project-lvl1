@@ -1,10 +1,13 @@
+import { generateRandomInt, getGameData } from '../utils.js';
 import gameLoop from '../index.js';
-import generateRandomInt from '../utils.js';
-import greetings from '../cli.js';
 
 const TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
+  if (number === 1 || number <= 0) {
+    return false;
+  }
+
   for (let i = 2; i < number / 2; i += 1) {
     if (number % i === 0) {
       return false;
@@ -21,9 +24,8 @@ const isPrimeToString = (number) => {
 };
 
 const playPrime = () => {
-  const playerName = greetings();
-  console.log(TASK);
-  gameLoop(generateRandomInt, isPrimeToString, playerName);
+  const gameData = getGameData(generateRandomInt, isPrimeToString);
+  gameLoop(gameData, TASK);
 };
 
 export default playPrime;

@@ -1,6 +1,5 @@
+import { generateRandomInt, getGameData } from '../utils.js';
 import gameLoop from '../index.js';
-import generateRandomInt from '../utils.js';
-import greetings from '../cli.js';
 
 const TASK = 'Find the greatest common divisor of given numbers.';
 
@@ -31,9 +30,8 @@ const computegcdToString = (str) => {
 };
 
 const playGcd = () => {
-  const playerName = greetings();
-  console.log(TASK);
-  gameLoop(generateNumbers, computegcdToString, playerName);
+  const gameData = getGameData(generateNumbers, computegcdToString);
+  gameLoop(gameData, TASK);
 };
 
 export default playGcd;
