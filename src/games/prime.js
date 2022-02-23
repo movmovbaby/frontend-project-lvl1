@@ -4,7 +4,7 @@ import gameLoop from '../index.js';
 const TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
-  if (number === 1 || number <= 0) {
+  if (number < 2) {
     return false;
   }
 
@@ -17,10 +17,8 @@ const isPrime = (number) => {
 };
 
 const isPrimeToString = (number) => {
-  if (isPrime(number)) {
-    return 'yes';
-  }
-  return 'no';
+  const text = isPrime(number) ? 'yes' : 'no';
+  return text;
 };
 
 const playPrime = () => {
