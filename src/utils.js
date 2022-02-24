@@ -1,4 +1,4 @@
-import { numberOfGames } from "./index.js";
+import { numberOfGames } from './index.js';
 
 const generateRandomInt = (min = 1, max = 100) => Math.floor(Math.random() * (max - min)) + min;
 
