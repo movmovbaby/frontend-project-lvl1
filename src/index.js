@@ -10,26 +10,25 @@ const gameLoop = (gameData, task) => {
   console.log(task);
 
   let currentRound = 0;
-  let returnString = '';
 
   while (currentRound !== numberOfGames) {
-    const question = gameData[currentRound][0];
+    const [question, answer] = gameData[currentRound];
     console.log(`Question: ${question}`);
-    const answer = gameData[currentRound][1];
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer === answer) {
       console.log(correctMessage);
       currentRound += 1;
     } else {
-      returnString = `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${playerName}!`;
-      console.log(returnString);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${playerName}!`);
       return;
     }
   }
 
-  returnString = `Congratulations, ${playerName}!`;
-  console.log(returnString);
+  console.log(`Congratulations, ${playerName}!`);
 };
 
-export default gameLoop;
+export {
+  gameLoop,
+  numberOfGames,
+};

@@ -1,5 +1,5 @@
 import { generateRandomInt, getGameData } from '../utils.js';
-import gameLoop from '../index.js';
+import { gameLoop } from '../index.js';
 
 const TASK = 'What is the result of the expression?';
 

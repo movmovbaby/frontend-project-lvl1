@@ -1,5 +1,5 @@
 import { generateRandomInt, getGameData } from '../utils.js';
-import gameLoop from '../index.js';
+import { gameLoop } from '../index.js';
 
 const TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
